@@ -3,6 +3,13 @@
 _Status: draft for grilling, 2026-10-22. Base: this repository (Harness Studio 0.3.4, Harness 0.2.1-rc.2 through the `studio` fork)._
 _Working names: **OpenInfra** (product), **OpenInfra Studio** (the app; same installer, different profile and brand)._
 
+> **Sequencing update (2026-10-22): we build the CLI and TUI first, the desktop last.** The revised order,
+> the CLI's verb/exit-code contract, the TUI's three screens, terminal approvals signed with SSH keys and the
+> distribution plan are in [OPENINFRA_CLI_FIRST.md](OPENINFRA_CLI_FIRST.md), which replaces §11 (roadmap) below.
+> The object model (§3), safety model (§5), integrations (§6), knowledge pack (§7), drift engine (§8) and
+> change pipeline (§9) are unchanged and still apply; "desktop", "pane" and "card" below read as "surface"
+> until the desktop exists.
+
 This is one document on purpose: the product decisions, the feel, the architecture, the safety model, the
 roadmap and the open questions belong together, because in this product every UX promise is a security or
 correctness decision in disguise.
@@ -29,9 +36,10 @@ screen.*
 | An LLM wrapper around vendor CLIs | The value is in **deterministic adapters + a findings/change model**, with the model on top |
 | A cloud cost tool, an ITSM, a SOAR | Adjacent; integrate, don't rebuild |
 
-**The wedge.** An individual NetDevOps/DevOps engineer installs the app, points it at NetBox (or a folder of
-YAML/TOML) and a Kubernetes cluster (read-only) and a cloud account (read-only), and within ten minutes sees a
-**readiness report** and a **drift inbox** that costs nothing to keep running. The paid reasoning only fires
+**The wedge.** An individual NetDevOps/DevOps engineer installs one binary, points it at NetBox (or a folder of
+YAML/TOML), a Kubernetes cluster (read-only) and a cloud account (read-only), and within ten minutes sees a
+**readiness report** and a **drift inbox** that costs nothing to keep running. (First surface: the `openinfra`
+CLI, then its TUI — see [OPENINFRA_CLI_FIRST.md](OPENINFRA_CLI_FIRST.md).) The paid reasoning only fires
 when they open a finding or ask for a change.
 
 **The promise, in the user's words.**
