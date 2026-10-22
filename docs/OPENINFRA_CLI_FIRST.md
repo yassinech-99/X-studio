@@ -133,6 +133,8 @@ oi change new|show|diff|check|approve|run|verify|rollback|close
 oi run list|show|logs|stop
 oi verify <change> [--wait]
 oi kb list|show|update|pin                       # knowledge pack
+oi workspace new|list|use|show|rename|move|remove|export|import
+oi tools doctor|install|lock|pin|use|verify|gc|bundle   # see WORKSPACES_AND_TOOLCHAIN.md
 oi tui                                           # the interactive surface
 oi mcp serve                                     # expose read verbs to other agents (later)
 ```

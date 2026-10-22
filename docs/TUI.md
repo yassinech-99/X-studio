@@ -30,6 +30,11 @@ terminal. The desktop app is later and must not shape this code.
 **Non-goals for v0.1.** Cloud writes, NetBox writes, Kubernetes writes (any kind), gNMI, SNMP, multi-user mode,
 Windows, a web UI, topology diagrams, charts, image preview.
 
+**Companion:** workspaces (named, git-tracked folders) and the toolchain (installing/verifying Ansible,
+OpenTofu/Terraform, kubectl and friends) are specified in
+[WORKSPACES_AND_TOOLCHAIN.md](WORKSPACES_AND_TOOLCHAIN.md). They add two TUI surfaces — Setup and Tools — and two
+exit codes (8 toolchain, 9 workspace); everything else in this plan is unchanged.
+
 ---
 
 ## 1. Principles this plan is held to
@@ -584,6 +589,8 @@ Four surfaces in one inline terminal app:
 2. **Drift** — triage list + detail (the ops home screen).
 3. **Change** — review, approve, run (the ceremony screen).
 4. **Run** — live per-target matrix.
+5. **Setup** and **Tools** — workspace, toolchain and sources (route 0, shown automatically when something is
+   missing: [WORKSPACES_AND_TOOLCHAIN.md](WORKSPACES_AND_TOOLCHAIN.md) §10).
 
 Plus overlays: help (`?`), filter (`/`), command palette (`:`), approval, confirm, toast, error.
 
@@ -1021,6 +1028,8 @@ honest but not padded. Every week ends with something runnable.
 | 5 | unreadable targets above threshold | fail: cannot attest |
 | 6 | verification failed after apply | page |
 | 7 | plan hash mismatch / stale approval | re-plan, re-approve |
+| 8 | toolchain unsatisfied / verification failed | fix the toolchain |
+| 9 | no workspace / ambiguous workspace | create or select one |
 
 ### 19.2 Command cheat sheet
 
