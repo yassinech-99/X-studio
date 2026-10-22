@@ -1,7 +1,8 @@
 # OpenInfra TUI: the MVP, and which harness to build it on
 
 _2026-10-22. Companion to [OPENINFRA_PLAN.md](OPENINFRA_PLAN.md) and [OPENINFRA_CLI_FIRST.md](OPENINFRA_CLI_FIRST.md).
-This document answers two questions: **is the TUI the MVP?** and **what do we start from?**_
+This document answers two questions: **is the TUI the MVP?** and **what do we start from?**
+The buildable version — packages, protocols, screens, keys, tests, week-by-week PRs — is [TUI.md](TUI.md)._
 
 ---
 
