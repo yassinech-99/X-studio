@@ -30,9 +30,9 @@ terminal. The desktop app is later and must not shape this code.
 **Non-goals for v0.1.** Cloud writes, NetBox writes, Kubernetes writes (any kind), gNMI, SNMP, multi-user mode,
 Windows, a web UI, topology diagrams, charts, image preview.
 
-**Companion:** workspaces (named, git-tracked folders) and the toolchain (installing/verifying Ansible,
-OpenTofu/Terraform, kubectl and friends) are specified in
-[WORKSPACES_AND_TOOLCHAIN.md](WORKSPACES_AND_TOOLCHAIN.md). They add two TUI surfaces — Setup and Tools — and two
+**Companions:** [WORKSPACES_AND_TOOLCHAIN.md](WORKSPACES_AND_TOOLCHAIN.md) (workspaces and tool installs) and
+[phased.md](phased.md) (the programme-level phase plan, model providers, bash-first tool surface and the cron
+scheduler). They add two TUI surfaces — Setup and Tools — and two
 exit codes (8 toolchain, 9 workspace); everything else in this plan is unchanged.
 
 ---
