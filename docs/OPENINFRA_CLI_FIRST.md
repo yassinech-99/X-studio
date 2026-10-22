@@ -1,7 +1,9 @@
 # OpenInfra, CLI and TUI first
 
 _Revision 1 of the sequencing decision, 2026-10-22. Supersedes §11 (roadmap) of [OPENINFRA_PLAN.md](OPENINFRA_PLAN.md);
-everything else there — object model, safety model, integrations, knowledge pack, drift design — still holds._
+everything else there — object model, safety model, integrations, knowledge pack, drift design — still holds.
+The programme-level phase plan (model providers, the bash-first tool surface, the cron scheduler) is
+[phased.md](phased.md)._
 
 **The question.** Should OpenInfra be a CLI/TUI product first, with the desktop app coming later, instead of the
 desktop-first order in the plan?

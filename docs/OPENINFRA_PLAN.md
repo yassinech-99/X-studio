@@ -706,6 +706,7 @@ openinfra/                       # engine code, plain ESM like the existing plug
   knowledge/                     # tool packs, one file per tool
   fixtures/                      # vendor configs + golden normaliser output (synthetic, never customer data)
 docs/OPENINFRA_PLAN.md           # this document
+docs/phased.md                   # phase-by-phase build + test plan (P0-P9)
 docs/OPENINFRA_FEEL.md           # later: the UX spec with screens
 desktop/                         # branding + build (existing scripts, new name/ids)
 ```
