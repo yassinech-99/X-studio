@@ -1,0 +1,20 @@
+/**
+ * Public surface, for tests and for embedding the engine (the runner service in P10 imports exactly this).
+ */
+export { main } from './cli.js'
+export { EXIT, OiError } from './exit.js'
+export { parseCron, nextRun, occurrencesBetween, localParts, wallToUtc } from './cron.js'
+export { parseDuration, loadSchedule, validateSchedule, tick, runJob, exportSchedule, acquireLease, loadStandingApproval } from './scheduler.js'
+export { classifyCommand, decide } from './classify.js'
+export { evaluate, loadRules } from './permissions.js'
+export { runTool, toolSpecs } from './tools.js'
+export { runAgent, SYSTEM_PROMPT, compactMessages } from './agent.js'
+export { checkDrift, compareTrees, loadIntent, loadObserved } from './drift.js'
+export { Store } from './store.js'
+export { ArtifactStore } from './artifacts.js'
+export { parseToml, stringifyToml } from './toml.js'
+export { createProvider, selectProvider, probeProvider, estimateCost } from './providers/index.js'
+export { fakeProvider } from './providers/fake.js'
+export { redact, redactDeep } from './redact.js'
+export { createWorkspace, findWorkspace, listWorkspaces } from './workspace.js'
+export { doctor } from './doctor.js'

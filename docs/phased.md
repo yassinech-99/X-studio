@@ -662,5 +662,27 @@ oi schedule status --json              # for monitoring; non-zero when a job is 
 
 ---
 
+## 20. Implementation status
+
+The first build lives in [`openinfra/`](../openinfra/README.md): zero runtime dependencies, Node ≥ 22.5, 154
+tests, no network and no keys required. What is real today:
+
+| Phase | State | Evidence |
+|---|---|---|
+| P0 | **done** | monorepo, protocol/exit codes, invariant harness, `node --test` on a clean container |
+| P1 | **done** | store, artifacts, journal, job runner with process-group kill and crash reconcile, `oi doctor` |
+| P2 | **partial** | workspaces (id, registry, templates, git, network-FS refusal) and lockfile verification; the verified *installer* is not written yet |
+| P3 | **done, one transport fewer** | Anthropic native + OpenAI-compatible (OpenAI, NIM, OpenRouter, gateways) + fake; probes, cost, retries, redaction. OpenAI runs on Chat Completions rather than the Responses API — one wire format for five providers beats four near-identical adapters |
+| P4 | **done** | bash tool with scrubbed env, confined cwd, group-kill timeouts, artifact offload; classifier with 5 tiers and the mode matrix; permissions merged deny-first; read-only tools parallel, writes serial |
+| P5 | **not started** | no device/k8s/cloud/NetBox adapters yet; drift consumes an `observed` tree so the engine is already tested without them |
+| P6 | **drift + scheduler done** | intent/observed comparison with fingerprints, severity, transitions and coverage; cron with IANA timezones and DST, leases, overlap/missed, standing approvals re-checked against the plan hash, four exporters |
+| P7 | **not started** | `infra-write` stays refused in every mode until the change engine exists |
+| P8 | **not started** | `oi tui` exits 6 and says which phase it is |
+| P9 | **partial** | `npm run demo`, README, exit-code contract; packaging, soak, security review outstanding |
+
+Two invariants gained a companion during the build: **11. a second tick cannot start a job another tick is
+running**, and **5** is enforced by stripping escape sequences from every captured stream, not by asking
+nicely. Both are in `openinfra/test/invariants.test.mjs`.
+
 _Review cadence: at each gate, this document is updated with what changed and why. Decisions that alter §7 (model
 layer), §8 (bash/tool surface) or §10 (scheduler safety) are recorded here before code._

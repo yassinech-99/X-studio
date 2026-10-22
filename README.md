@@ -10,6 +10,10 @@
 
 Harness Studio is a desktop app that works like Claude Code desktop, with whichever model provider you have an API key for. Download it, choose a model, open a project folder and ask.
 
+> **OpenInfra** — a CLI-first infrastructure harness built on this fork — now has a working first build in
+> [`openinfra/`](openinfra/README.md) (bash-first agent, multi-provider models, drift, cron). The plan is
+> [`docs/phased.md`](docs/phased.md).
+
 ## What it does
 
 - **Point at your UI, tell the agent what to change.** Open your app's dev server in the Browser pane, pick an element, and say "make this bigger": the agent gets the element's **source file and line**, component, text, styles and HTML.

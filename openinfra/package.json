@@ -1,0 +1,38 @@
+{
+  "name": "openinfra",
+  "version": "0.1.0",
+  "description": "OpenInfra: a CLI-first infrastructure harness. Deterministic verbs over devices, cloud, Kubernetes and IaC, with a bash-first agent on models you bring keys for.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "oi": "./bin/oi.js",
+    "openinfra": "./bin/oi.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "test": "node --test --disable-warning=ExperimentalWarning test/*.test.mjs",
+    "test:fast": "node --test test/*.test.mjs --test-name-pattern='^(?!slow)'",
+    "lint": "node scripts/check.mjs",
+    "demo": "bash scripts/demo.sh"
+  },
+  "keywords": [
+    "infrastructure",
+    "netops",
+    "devops",
+    "ansible",
+    "opentofu",
+    "drift",
+    "agent",
+    "cli"
+  ]
+}
