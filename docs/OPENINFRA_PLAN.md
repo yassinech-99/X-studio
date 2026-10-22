@@ -8,7 +8,8 @@ _Working names: **OpenInfra** (product), **OpenInfra Studio** (the app; same ins
 > distribution plan are in [OPENINFRA_CLI_FIRST.md](OPENINFRA_CLI_FIRST.md), which replaces §11 (roadmap) below.
 > The object model (§3), safety model (§5), integrations (§6), knowledge pack (§7), drift engine (§8) and
 > change pipeline (§9) are unchanged and still apply; "desktop", "pane" and "card" below read as "surface"
-> until the desktop exists.
+> until the desktop exists. The TUI's harness base, its gap list against this fork and its MVP cut are in
+> [OPENINFRA_TUI_HARNESS.md](OPENINFRA_TUI_HARNESS.md).
 
 This is one document on purpose: the product decisions, the feel, the architecture, the safety model, the
 roadmap and the open questions belong together, because in this product every UX promise is a security or
